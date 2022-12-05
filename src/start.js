@@ -7,6 +7,7 @@ const {
   handleError,
   AppError,
   ErrorCodes,
+  listenToErrorEvents,
 } = require('./libraries/error-handling');
 
 // 创建日志记录器
@@ -24,12 +25,18 @@ const logger = require('./libraries/logger')('start', {
 
 (async () => {
   try {
+    // 监听全局错误事件
+    listenToErrorEvents();
+
+    // 校验配置
     validateConfigs();
     logger.info('所有配置校验通过');
 
+    // 连接数据库
     await getDbConnection().authenticate();
     logger.info('数据库连接成功');
 
+    // 连接Redis
     await Promise.race([
       new Promise((resolve) => {
         getRedis().on('connect', () => {
@@ -44,6 +51,7 @@ const logger = require('./libraries/logger')('start', {
       }),
     ]);
 
+    // 启动服务
     logger.info('开始轮询...');
     await startService();
   } catch (error) {
