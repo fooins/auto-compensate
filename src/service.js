@@ -103,7 +103,7 @@ const queryTasks = async (taskIds) => {
     }
 
     if (task.autoCompensate !== 'enabled') {
-      logger.error(`任务不是不允许自动理赔（taskId=${taskId}）`);
+      logger.error(`任务不允许自动理赔（taskId=${taskId}）`);
       continue;
     }
 
