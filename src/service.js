@@ -3,7 +3,7 @@
 
 const config = require('config');
 const uuid = require('uuid');
-const { sleep, error500 } = require('./libraries/utils');
+const { sleep, error500, hasOwnProperty } = require('./libraries/utils');
 const { getRedis } = require('./libraries/redis');
 const { handleError } = require('./libraries/error-handling');
 const dao = require('./dao');
@@ -90,19 +90,19 @@ const queryTasks = async (taskIds) => {
   const tasks = [];
   for (let i = 0; i < taskIds.length; i += 1) {
     const taskId = taskIds[i];
-    const task = rsts.find((t) => t.id === taskId);
+    const task = rsts.find((t) => `${t.id}` === `${taskId}`);
 
     if (!task) {
       logger.error(`任务不存在（taskId=${taskId}）`);
       continue;
     }
 
-    if (!task.status !== 'pending') {
+    if (task.status !== 'pending') {
       logger.error(`任务不是 pending 状态（taskId=${taskId}）`);
       continue;
     }
 
-    if (!task.autoCompensate !== 'enabled') {
+    if (task.autoCompensate !== 'enabled') {
       logger.error(`任务不是不允许自动理赔（taskId=${taskId}）`);
       continue;
     }
