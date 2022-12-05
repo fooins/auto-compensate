@@ -1,7 +1,7 @@
 {
   "name": "auto-compensate",
   "version": "1.0.0",
-  "description": "自动理赔作业程序。自动赔付的理赔单申请成功后插队列，本作业（集群）则不断去消费该队列执行自动赔付。",
+  "description": "这是福保业务倍增阶段用于自动理赔的作业程序。是由于 “高性能&高可用&高扩展” 相关改造的需要，从 insbiz 系统独立出来的工程。",
   "main": "src/start.js",
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development nodemon ./src/start.js",
