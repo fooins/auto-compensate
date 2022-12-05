@@ -199,7 +199,7 @@ const handler = async (task) => {
 /**
  * 启动服务
  */
-const start = async () => {
+const startService = async () => {
   // 创建消费者组
   await createGroup();
 
@@ -225,5 +225,5 @@ const start = async () => {
 };
 
 module.exports = {
-  start,
+  startService,
 };
