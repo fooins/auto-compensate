@@ -7,7 +7,7 @@
 
 1. 设备初始化：
 
-   - 容器服务：创建 auto-compensate 集群（Job）。
+   - 容器服务：创建 auto-compensate 集群（Deployment）。
 
 2. 设置 GitHub 流水线[密钥信息](https://github.com/organizations/fooins/settings/secrets/actions)：
 

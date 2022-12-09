@@ -57,4 +57,4 @@ jobs:
 
       - name: 更新 auto-compensate 集群镜像
         run: |
-          kubectl set image job/auto-compensate container1=${{ secrets.TKE_REGISTRY_SERVER }}:${GITHUB_SHA}${GITHUB_RUN_ID}
+          kubectl set image deployment/auto-compensate container1=${{ secrets.TKE_REGISTRY_SERVER }}:${GITHUB_SHA}${GITHUB_RUN_ID}
