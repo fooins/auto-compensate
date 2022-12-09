@@ -4,6 +4,11 @@ const getClaimModel = require('./claim');
 const getClaimInsuredModel = require('./claim-insured');
 const getCompensationTaskModel = require('./compensation-task');
 const getNotifyTaskModel = require('./notify-task');
+const getProducerModel = require('./producer');
+const getContractModel = require('./contract');
+const getPlanModel = require('./plan');
+const getProductModel = require('./product');
+const getApplicantModel = require('./applicant');
 
 module.exports = {
   getPolicyModel,
@@ -12,4 +17,9 @@ module.exports = {
   getClaimInsuredModel,
   getCompensationTaskModel,
   getNotifyTaskModel,
+  getProducerModel,
+  getContractModel,
+  getPlanModel,
+  getProductModel,
+  getApplicantModel,
 };
