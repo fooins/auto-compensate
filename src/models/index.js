@@ -8,6 +8,7 @@ const getProducerModel = require('./producer');
 const getContractModel = require('./contract');
 const getPlanModel = require('./plan');
 const getProductModel = require('./product');
+const getApplicantModel = require('./applicant');
 
 module.exports = {
   getPolicyModel,
@@ -20,4 +21,5 @@ module.exports = {
   getContractModel,
   getPlanModel,
   getProductModel,
+  getApplicantModel,
 };
