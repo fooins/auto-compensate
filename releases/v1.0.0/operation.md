@@ -17,4 +17,4 @@
 
 ## 2. 回滚（若需要）
 
-1. 删除 auto-compensate 集群（Job）。
+1. 删除 auto-compensate 集群（Deployment）。
